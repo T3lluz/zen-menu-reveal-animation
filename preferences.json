@@ -4,7 +4,8 @@
     "label": "🖼️ Image URL, format:   url('https://example.com/youricon.svg')",
     "type": "string",
     "defaultValue": "url('https://github.com/sameerasw/my-internet/blob/main/wave-light.png?raw=true')",
-    "placeholder": "url('https://example.com/youricon.svg')"
+    "placeholder": "url('https://example.com/youricon.svg')",
+    "showIf": "zen-menu-reveal-custom-icon.enable-custom-icon"
   },
   {
     "property": "zen-menu-reveal-custom-icon.enable-animation",
@@ -20,9 +21,9 @@
   },
   {
     "property": "zen-menu-reveal-custom-icon.hover-animation-type",
-    "label": "Settings icon hover animation type (spin, bounce, pulse, none)",
+    "label": "Settings icon hover animation type (rotate180, bounce, pulse, wiggle, none)",
     "type": "select",
-    "options": ["spin", "bounce", "pulse", "none"],
-    "defaultValue": "spin"
+    "options": ["rotate180", "bounce", "pulse", "wiggle", "none"],
+    "defaultValue": "rotate180"
   }
 ] 

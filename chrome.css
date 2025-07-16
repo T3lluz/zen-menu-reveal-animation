@@ -228,19 +228,8 @@
 
 /* --- Custom Menu Icon (toggleable) --- */
 @media (-moz-bool-pref: "zen-menu-reveal-custom-icon.enable-custom-icon") {
-  /*
-    Sine will inject the user-provided icon URL here if set in settings.
-    If Sine supports string prefs in CSS, use:
-      list-style-image: url(-moz-string-pref: "zen-menu-reveal-custom-icon.custom-icon-url");
-    Otherwise, Sine will replace the placeholder below with the actual URL at runtime.
-    If no URL is set, fallback to the default SVG by leaving the placeholder empty or removing the line.
-  */
   toolbarbutton#PanelUI-menu-button {
-    /* Sine replaces __ZENCUSTOMICONURL__ with the user URL, or leaves it blank for fallback */
     list-style-image: url("__ZENCUSTOMICONURL__");
-    /* Fallback to default SVG if no custom URL is set */
-    /* If Sine does not replace the placeholder, use the default SVG below: */
-    /* list-style-image: url('data:image/svg+xml;utf8,<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.09A1.65 1.65 0 0 0 11 3.09V3a2 2 0 1 1 4 0v.09c.38.14.73.36 1 .66.27.3.49.65.66 1.05h.09a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.09c.14.38.36.73.66 1 .3.27.65.49 1.05.66v.09a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z'/></svg>') !important; */
   }
   toolbarbutton#PanelUI-menu-button .toolbarbutton-icon {
     width: 16px !important;
@@ -252,8 +241,10 @@
     scale: 1 !important;
   }
   /* Animation on hover based on preference */
-  html[zen-single-toolbar="true"] #PanelUI-menu-button:hover .toolbarbutton-icon {
-    animation: spin-once 1s cubic-bezier(0.35, 0.15, 0.12, 1) forwards;
+  @media (-moz-bool-pref: "zen-menu-reveal-custom-icon.hover-animation-type=rotate180") {
+    html[zen-single-toolbar="true"] #PanelUI-menu-button:hover .toolbarbutton-icon {
+      animation: rotate180-once 0.7s cubic-bezier(0.35, 0.15, 0.12, 1) forwards;
+    }
   }
   @media (-moz-bool-pref: "zen-menu-reveal-custom-icon.hover-animation-type=bounce") {
     html[zen-single-toolbar="true"] #PanelUI-menu-button:hover .toolbarbutton-icon {
@@ -265,12 +256,17 @@
       animation: pulse-once 0.7s cubic-bezier(0.4, 0, 0.6, 1) forwards;
     }
   }
+  @media (-moz-bool-pref: "zen-menu-reveal-custom-icon.hover-animation-type=wiggle") {
+    html[zen-single-toolbar="true"] #PanelUI-menu-button:hover .toolbarbutton-icon {
+      animation: wiggle-once 0.7s cubic-bezier(0.4, 0, 0.6, 1) forwards;
+    }
+  }
   @media (-moz-bool-pref: "zen-menu-reveal-custom-icon.hover-animation-type=none") {
     html[zen-single-toolbar="true"] #PanelUI-menu-button:hover .toolbarbutton-icon {
       animation: none !important;
     }
   }
-  @keyframes spin-once {
+  @keyframes rotate180-once {
     to { transform: rotate(180deg); }
   }
   @keyframes bounce-once {
@@ -284,6 +280,14 @@
     0% { transform: scale(1); }
     50% { transform: scale(1.2); }
     100% { transform: scale(1); }
+  }
+  @keyframes wiggle-once {
+    0% { transform: rotate(0deg); }
+    20% { transform: rotate(-15deg); }
+    40% { transform: rotate(10deg); }
+    60% { transform: rotate(-10deg); }
+    80% { transform: rotate(5deg); }
+    100% { transform: rotate(0deg); }
   }
 }
 
