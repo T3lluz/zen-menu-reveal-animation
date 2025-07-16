@@ -37,13 +37,8 @@ function renderSettings(settings) {
   settings.forEach(setting => {
     currentValues[setting.property] = getSettingValue(setting.property, setting.defaultValue);
   });
-  // Render settings in order, but always render the custom icon toggle first
-  const sortedSettings = [
-    ...settings.filter(s => s.property === 'zen-menu-reveal-custom-icon.enable-custom-icon'),
-    ...settings.filter(s => s.property !== 'zen-menu-reveal-custom-icon.enable-custom-icon')
-  ];
-  sortedSettings.forEach(setting => {
-    // Improved conditional display logic
+  // Render settings in the order they appear in preferences.json
+  settings.forEach(setting => {
     if (!isShowIfEnabled(setting, currentValues, settings)) {
       return;
     }
@@ -62,7 +57,6 @@ function renderSettings(settings) {
       input.checked = getSettingValue(setting.property, setting.defaultValue) === 'true' || getSettingValue(setting.property, setting.defaultValue) === true;
       input.addEventListener('change', () => {
         setSettingValue(setting.property, input.checked);
-        // Re-render to update conditional fields
         renderSettings(settings);
       });
     } else if (setting.type === 'text' || setting.type === 'string') {
@@ -71,7 +65,6 @@ function renderSettings(settings) {
       input.id = setting.property;
       input.value = getSettingValue(setting.property, setting.defaultValue);
       if (setting.placeholder) input.placeholder = setting.placeholder;
-      // SVG validation for custom icon URL
       if (setting.property === 'zen-menu-reveal-custom-icon.custom-icon-url') {
         warning = document.createElement('div');
         warning.style.color = 'orange';
