@@ -226,69 +226,23 @@
   }
 }
 
-/* --- Custom Menu Icon (toggleable) --- */
+/* --- Custom Menu Icon (toggleable, static SVG, 180deg rotation on hover) --- */
 @media (-moz-bool-pref: "zen-menu-reveal-custom-icon.enable-custom-icon") {
   toolbarbutton#PanelUI-menu-button {
-    list-style-image: -moz-pref("zen-menu-reveal-custom-icon.custom-icon-url", url("__ZENCUSTOMICONURL__"));
+    list-style-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='3'/><path d='M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 8 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.6 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 8a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 8 4.6a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09c0 .66.39 1.25 1 1.51a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 8c.66 0 1.25.39 1.51 1H21a2 2 0 0 1 0 4h-.09c-.26 0-.51.1-.7.29-.19.19-.29.44-.29.7z'/></svg>");
   }
   toolbarbutton#PanelUI-menu-button .toolbarbutton-icon {
-    width: -moz-pref("zen-menu-reveal-custom-icon.icon-size", 16)px !important;
-    height: -moz-pref("zen-menu-reveal-custom-icon.icon-size", 16)px !important;
-    min-width: -moz-pref("zen-menu-reveal-custom-icon.icon-size", 16)px !important;
-    min-height: -moz-pref("zen-menu-reveal-custom-icon.icon-size", 16)px !important;
-    max-width: -moz-pref("zen-menu-reveal-custom-icon.icon-size", 16)px !important;
-    max-height: -moz-pref("zen-menu-reveal-custom-icon.icon-size", 16)px !important;
+    width: 16px !important;
+    height: 16px !important;
+    min-width: 16px !important;
+    min-height: 16px !important;
+    max-width: 16px !important;
+    max-height: 16px !important;
     scale: 1 !important;
+    transition: transform 0.7s cubic-bezier(0.35, 0.15, 0.12, 1);
   }
-  /* Animation on hover based on preference */
-  @media (-moz-bool-pref: "zen-menu-reveal-custom-icon.hover-animation-type=rotate180") {
-    html[zen-single-toolbar="true"] #PanelUI-menu-button:hover .toolbarbutton-icon {
-      animation: rotate180-once 0.7s cubic-bezier(0.35, 0.15, 0.12, 1) forwards;
-    }
-  }
-  @media (-moz-bool-pref: "zen-menu-reveal-custom-icon.hover-animation-type=bounce") {
-    html[zen-single-toolbar="true"] #PanelUI-menu-button:hover .toolbarbutton-icon {
-      animation: bounce-once 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
-    }
-  }
-  @media (-moz-bool-pref: "zen-menu-reveal-custom-icon.hover-animation-type=pulse") {
-    html[zen-single-toolbar="true"] #PanelUI-menu-button:hover .toolbarbutton-icon {
-      animation: pulse-once 0.7s cubic-bezier(0.4, 0, 0.6, 1) forwards;
-    }
-  }
-  @media (-moz-bool-pref: "zen-menu-reveal-custom-icon.hover-animation-type=wiggle") {
-    html[zen-single-toolbar="true"] #PanelUI-menu-button:hover .toolbarbutton-icon {
-      animation: wiggle-once 0.7s cubic-bezier(0.4, 0, 0.6, 1) forwards;
-    }
-  }
-  @media (-moz-bool-pref: "zen-menu-reveal-custom-icon.hover-animation-type=none") {
-    html[zen-single-toolbar="true"] #PanelUI-menu-button:hover .toolbarbutton-icon {
-      animation: none !important;
-    }
-  }
-  @keyframes rotate180-once {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(180deg); }
-  }
-  @keyframes bounce-once {
-    0% { transform: translateY(0); }
-    30% { transform: translateY(-10px); }
-    50% { transform: translateY(0); }
-    70% { transform: translateY(-5px); }
-    100% { transform: translateY(0); }
-  }
-  @keyframes pulse-once {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.2); }
-    100% { transform: scale(1); }
-  }
-  @keyframes wiggle-once {
-    0% { transform: rotate(0deg); }
-    20% { transform: rotate(-15deg); }
-    40% { transform: rotate(10deg); }
-    60% { transform: rotate(-10deg); }
-    80% { transform: rotate(5deg); }
-    100% { transform: rotate(0deg); }
+  html[zen-single-toolbar="true"] #PanelUI-menu-button:hover .toolbarbutton-icon {
+    transform: rotate(180deg);
   }
 }
 
