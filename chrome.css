@@ -1,210 +1,110 @@
 #appMenu-popup:not([panelopen]) .subviewbutton,
-#PanelUI-popup:not([panelopen]) .subviewbutton,
-#appMenu-popup:not([panelopen]) .panel-menuitem,
-#PanelUI-popup:not([panelopen]) .panel-menuitem {
+#appMenu-popup:not([panelopen]) .panel-menuitem {
   opacity: 0;
   pointer-events: none;
 }
 #appMenu-popup[panelopen] .subviewbutton,
-#PanelUI-popup[panelopen] .subviewbutton,
-#appMenu-popup[panelopen] .panel-menuitem,
-#PanelUI-popup[panelopen] .panel-menuitem {
+#appMenu-popup[panelopen] .panel-menuitem {
   animation: menuitem-reveal-down 0.15s both;
   pointer-events: auto;
 }
 /* Staggered delays for 48 items, 10ms per item */
 #appMenu-popup[panelopen] .subviewbutton:nth-child(1),
-#PanelUI-popup[panelopen] .subviewbutton:nth-child(1),
-#appMenu-popup[panelopen] .panel-menuitem:nth-child(1),
-#PanelUI-popup[panelopen] .panel-menuitem:nth-child(1) { animation-delay: 0ms; }
+#appMenu-popup[panelopen] .panel-menuitem:nth-child(1) { animation-delay: 0ms; }
 #appMenu-popup[panelopen] .subviewbutton:nth-child(2),
-#PanelUI-popup[panelopen] .subviewbutton:nth-child(2),
-#appMenu-popup[panelopen] .panel-menuitem:nth-child(2),
-#PanelUI-popup[panelopen] .panel-menuitem:nth-child(2) { animation-delay: 10ms; }
+#appMenu-popup[panelopen] .panel-menuitem:nth-child(2) { animation-delay: 10ms; }
 #appMenu-popup[panelopen] .subviewbutton:nth-child(3),
-#PanelUI-popup[panelopen] .subviewbutton:nth-child(3),
-#appMenu-popup[panelopen] .panel-menuitem:nth-child(3),
-#PanelUI-popup[panelopen] .panel-menuitem:nth-child(3) { animation-delay: 20ms; }
+#appMenu-popup[panelopen] .panel-menuitem:nth-child(3) { animation-delay: 20ms; }
 #appMenu-popup[panelopen] .subviewbutton:nth-child(4),
-#PanelUI-popup[panelopen] .subviewbutton:nth-child(4),
-#appMenu-popup[panelopen] .panel-menuitem:nth-child(4),
-#PanelUI-popup[panelopen] .panel-menuitem:nth-child(4) { animation-delay: 30ms; }
+#appMenu-popup[panelopen] .panel-menuitem:nth-child(4) { animation-delay: 30ms; }
 #appMenu-popup[panelopen] .subviewbutton:nth-child(5),
-#PanelUI-popup[panelopen] .subviewbutton:nth-child(5),
-#appMenu-popup[panelopen] .panel-menuitem:nth-child(5),
-#PanelUI-popup[panelopen] .panel-menuitem:nth-child(5) { animation-delay: 40ms; }
+#appMenu-popup[panelopen] .panel-menuitem:nth-child(5) { animation-delay: 40ms; }
 #appMenu-popup[panelopen] .subviewbutton:nth-child(6),
-#PanelUI-popup[panelopen] .subviewbutton:nth-child(6),
-#appMenu-popup[panelopen] .panel-menuitem:nth-child(6),
-#PanelUI-popup[panelopen] .panel-menuitem:nth-child(6) { animation-delay: 50ms; }
+#appMenu-popup[panelopen] .panel-menuitem:nth-child(6) { animation-delay: 50ms; }
 #appMenu-popup[panelopen] .subviewbutton:nth-child(7),
-#PanelUI-popup[panelopen] .subviewbutton:nth-child(7),
-#appMenu-popup[panelopen] .panel-menuitem:nth-child(7),
-#PanelUI-popup[panelopen] .panel-menuitem:nth-child(7) { animation-delay: 60ms; }
+#appMenu-popup[panelopen] .panel-menuitem:nth-child(7) { animation-delay: 60ms; }
 #appMenu-popup[panelopen] .subviewbutton:nth-child(8),
-#PanelUI-popup[panelopen] .subviewbutton:nth-child(8),
-#appMenu-popup[panelopen] .panel-menuitem:nth-child(8),
-#PanelUI-popup[panelopen] .panel-menuitem:nth-child(8) { animation-delay: 70ms; }
+#appMenu-popup[panelopen] .panel-menuitem:nth-child(8) { animation-delay: 70ms; }
 #appMenu-popup[panelopen] .subviewbutton:nth-child(9),
-#PanelUI-popup[panelopen] .subviewbutton:nth-child(9),
-#appMenu-popup[panelopen] .panel-menuitem:nth-child(9),
-#PanelUI-popup[panelopen] .panel-menuitem:nth-child(9) { animation-delay: 80ms; }
+#appMenu-popup[panelopen] .panel-menuitem:nth-child(9) { animation-delay: 80ms; }
 #appMenu-popup[panelopen] .subviewbutton:nth-child(10),
-#PanelUI-popup[panelopen] .subviewbutton:nth-child(10),
-#appMenu-popup[panelopen] .panel-menuitem:nth-child(10),
-#PanelUI-popup[panelopen] .panel-menuitem:nth-child(10) { animation-delay: 90ms; }
+#appMenu-popup[panelopen] .panel-menuitem:nth-child(10) { animation-delay: 90ms; }
 #appMenu-popup[panelopen] .subviewbutton:nth-child(11),
-#PanelUI-popup[panelopen] .subviewbutton:nth-child(11),
-#appMenu-popup[panelopen] .panel-menuitem:nth-child(11),
-#PanelUI-popup[panelopen] .panel-menuitem:nth-child(11) { animation-delay: 100ms; }
+#appMenu-popup[panelopen] .panel-menuitem:nth-child(11) { animation-delay: 100ms; }
 #appMenu-popup[panelopen] .subviewbutton:nth-child(12),
-#PanelUI-popup[panelopen] .subviewbutton:nth-child(12),
-#appMenu-popup[panelopen] .panel-menuitem:nth-child(12),
-#PanelUI-popup[panelopen] .panel-menuitem:nth-child(12) { animation-delay: 110ms; }
+#appMenu-popup[panelopen] .panel-menuitem:nth-child(12) { animation-delay: 110ms; }
 #appMenu-popup[panelopen] .subviewbutton:nth-child(13),
-#PanelUI-popup[panelopen] .subviewbutton:nth-child(13),
-#appMenu-popup[panelopen] .panel-menuitem:nth-child(13),
-#PanelUI-popup[panelopen] .panel-menuitem:nth-child(13) { animation-delay: 120ms; }
+#appMenu-popup[panelopen] .panel-menuitem:nth-child(13) { animation-delay: 120ms; }
 #appMenu-popup[panelopen] .subviewbutton:nth-child(14),
-#PanelUI-popup[panelopen] .subviewbutton:nth-child(14),
-#appMenu-popup[panelopen] .panel-menuitem:nth-child(14),
-#PanelUI-popup[panelopen] .panel-menuitem:nth-child(14) { animation-delay: 130ms; }
+#appMenu-popup[panelopen] .panel-menuitem:nth-child(14) { animation-delay: 130ms; }
 #appMenu-popup[panelopen] .subviewbutton:nth-child(15),
-#PanelUI-popup[panelopen] .subviewbutton:nth-child(15),
-#appMenu-popup[panelopen] .panel-menuitem:nth-child(15),
-#PanelUI-popup[panelopen] .panel-menuitem:nth-child(15) { animation-delay: 140ms; }
+#appMenu-popup[panelopen] .panel-menuitem:nth-child(15) { animation-delay: 140ms; }
 #appMenu-popup[panelopen] .subviewbutton:nth-child(16),
-#PanelUI-popup[panelopen] .subviewbutton:nth-child(16),
-#appMenu-popup[panelopen] .panel-menuitem:nth-child(16),
-#PanelUI-popup[panelopen] .panel-menuitem:nth-child(16) { animation-delay: 150ms; }
+#appMenu-popup[panelopen] .panel-menuitem:nth-child(16) { animation-delay: 150ms; }
 #appMenu-popup[panelopen] .subviewbutton:nth-child(17),
-#PanelUI-popup[panelopen] .subviewbutton:nth-child(17),
-#appMenu-popup[panelopen] .panel-menuitem:nth-child(17),
-#PanelUI-popup[panelopen] .panel-menuitem:nth-child(17) { animation-delay: 160ms; }
+#appMenu-popup[panelopen] .panel-menuitem:nth-child(17) { animation-delay: 160ms; }
 #appMenu-popup[panelopen] .subviewbutton:nth-child(18),
-#PanelUI-popup[panelopen] .subviewbutton:nth-child(18),
-#appMenu-popup[panelopen] .panel-menuitem:nth-child(18),
-#PanelUI-popup[panelopen] .panel-menuitem:nth-child(18) { animation-delay: 170ms; }
+#appMenu-popup[panelopen] .panel-menuitem:nth-child(18) { animation-delay: 170ms; }
 #appMenu-popup[panelopen] .subviewbutton:nth-child(19),
-#PanelUI-popup[panelopen] .subviewbutton:nth-child(19),
-#appMenu-popup[panelopen] .panel-menuitem:nth-child(19),
-#PanelUI-popup[panelopen] .panel-menuitem:nth-child(19) { animation-delay: 180ms; }
+#appMenu-popup[panelopen] .panel-menuitem:nth-child(19) { animation-delay: 180ms; }
 #appMenu-popup[panelopen] .subviewbutton:nth-child(20),
-#PanelUI-popup[panelopen] .subviewbutton:nth-child(20),
-#appMenu-popup[panelopen] .panel-menuitem:nth-child(20),
-#PanelUI-popup[panelopen] .panel-menuitem:nth-child(20) { animation-delay: 190ms; }
+#appMenu-popup[panelopen] .panel-menuitem:nth-child(20) { animation-delay: 190ms; }
 #appMenu-popup[panelopen] .subviewbutton:nth-child(21),
-#PanelUI-popup[panelopen] .subviewbutton:nth-child(21),
-#appMenu-popup[panelopen] .panel-menuitem:nth-child(21),
-#PanelUI-popup[panelopen] .panel-menuitem:nth-child(21) { animation-delay: 200ms; }
+#appMenu-popup[panelopen] .panel-menuitem:nth-child(21) { animation-delay: 200ms; }
 #appMenu-popup[panelopen] .subviewbutton:nth-child(22),
-#PanelUI-popup[panelopen] .subviewbutton:nth-child(22),
-#appMenu-popup[panelopen] .panel-menuitem:nth-child(22),
-#PanelUI-popup[panelopen] .panel-menuitem:nth-child(22) { animation-delay: 210ms; }
+#appMenu-popup[panelopen] .panel-menuitem:nth-child(22) { animation-delay: 210ms; }
 #appMenu-popup[panelopen] .subviewbutton:nth-child(23),
-#PanelUI-popup[panelopen] .subviewbutton:nth-child(23),
-#appMenu-popup[panelopen] .panel-menuitem:nth-child(23),
-#PanelUI-popup[panelopen] .panel-menuitem:nth-child(23) { animation-delay: 220ms; }
+#appMenu-popup[panelopen] .panel-menuitem:nth-child(23) { animation-delay: 220ms; }
 #appMenu-popup[panelopen] .subviewbutton:nth-child(24),
-#PanelUI-popup[panelopen] .subviewbutton:nth-child(24),
-#appMenu-popup[panelopen] .panel-menuitem:nth-child(24),
-#PanelUI-popup[panelopen] .panel-menuitem:nth-child(24) { animation-delay: 230ms; }
+#appMenu-popup[panelopen] .panel-menuitem:nth-child(24) { animation-delay: 230ms; }
 #appMenu-popup[panelopen] .subviewbutton:nth-child(25),
-#PanelUI-popup[panelopen] .subviewbutton:nth-child(25),
-#appMenu-popup[panelopen] .panel-menuitem:nth-child(25),
-#PanelUI-popup[panelopen] .panel-menuitem:nth-child(25) { animation-delay: 240ms; }
+#appMenu-popup[panelopen] .panel-menuitem:nth-child(25) { animation-delay: 240ms; }
 #appMenu-popup[panelopen] .subviewbutton:nth-child(26),
-#PanelUI-popup[panelopen] .subviewbutton:nth-child(26),
-#appMenu-popup[panelopen] .panel-menuitem:nth-child(26),
-#PanelUI-popup[panelopen] .panel-menuitem:nth-child(26) { animation-delay: 250ms; }
+#appMenu-popup[panelopen] .panel-menuitem:nth-child(26) { animation-delay: 250ms; }
 #appMenu-popup[panelopen] .subviewbutton:nth-child(27),
-#PanelUI-popup[panelopen] .subviewbutton:nth-child(27),
-#appMenu-popup[panelopen] .panel-menuitem:nth-child(27),
-#PanelUI-popup[panelopen] .panel-menuitem:nth-child(27) { animation-delay: 260ms; }
+#appMenu-popup[panelopen] .panel-menuitem:nth-child(27) { animation-delay: 260ms; }
 #appMenu-popup[panelopen] .subviewbutton:nth-child(28),
-#PanelUI-popup[panelopen] .subviewbutton:nth-child(28),
-#appMenu-popup[panelopen] .panel-menuitem:nth-child(28),
-#PanelUI-popup[panelopen] .panel-menuitem:nth-child(28) { animation-delay: 270ms; }
+#appMenu-popup[panelopen] .panel-menuitem:nth-child(28) { animation-delay: 270ms; }
 #appMenu-popup[panelopen] .subviewbutton:nth-child(29),
-#PanelUI-popup[panelopen] .subviewbutton:nth-child(29),
-#appMenu-popup[panelopen] .panel-menuitem:nth-child(29),
-#PanelUI-popup[panelopen] .panel-menuitem:nth-child(29) { animation-delay: 280ms; }
+#appMenu-popup[panelopen] .panel-menuitem:nth-child(29) { animation-delay: 280ms; }
 #appMenu-popup[panelopen] .subviewbutton:nth-child(30),
-#PanelUI-popup[panelopen] .subviewbutton:nth-child(30),
-#appMenu-popup[panelopen] .panel-menuitem:nth-child(30),
-#PanelUI-popup[panelopen] .panel-menuitem:nth-child(30) { animation-delay: 290ms; }
+#appMenu-popup[panelopen] .panel-menuitem:nth-child(30) { animation-delay: 290ms; }
 #appMenu-popup[panelopen] .subviewbutton:nth-child(31),
-#PanelUI-popup[panelopen] .subviewbutton:nth-child(31),
-#appMenu-popup[panelopen] .panel-menuitem:nth-child(31),
-#PanelUI-popup[panelopen] .panel-menuitem:nth-child(31) { animation-delay: 300ms; }
+#appMenu-popup[panelopen] .panel-menuitem:nth-child(31) { animation-delay: 300ms; }
 #appMenu-popup[panelopen] .subviewbutton:nth-child(32),
-#PanelUI-popup[panelopen] .subviewbutton:nth-child(32),
-#appMenu-popup[panelopen] .panel-menuitem:nth-child(32),
-#PanelUI-popup[panelopen] .panel-menuitem:nth-child(32) { animation-delay: 310ms; }
+#appMenu-popup[panelopen] .panel-menuitem:nth-child(32) { animation-delay: 310ms; }
 #appMenu-popup[panelopen] .subviewbutton:nth-child(33),
-#PanelUI-popup[panelopen] .subviewbutton:nth-child(33),
-#appMenu-popup[panelopen] .panel-menuitem:nth-child(33),
-#PanelUI-popup[panelopen] .panel-menuitem:nth-child(33) { animation-delay: 320ms; }
+#appMenu-popup[panelopen] .panel-menuitem:nth-child(33) { animation-delay: 320ms; }
 #appMenu-popup[panelopen] .subviewbutton:nth-child(34),
-#PanelUI-popup[panelopen] .subviewbutton:nth-child(34),
-#appMenu-popup[panelopen] .panel-menuitem:nth-child(34),
-#PanelUI-popup[panelopen] .panel-menuitem:nth-child(34) { animation-delay: 330ms; }
+#appMenu-popup[panelopen] .panel-menuitem:nth-child(34) { animation-delay: 330ms; }
 #appMenu-popup[panelopen] .subviewbutton:nth-child(35),
-#PanelUI-popup[panelopen] .subviewbutton:nth-child(35),
-#appMenu-popup[panelopen] .panel-menuitem:nth-child(35),
-#PanelUI-popup[panelopen] .panel-menuitem:nth-child(35) { animation-delay: 340ms; }
+#appMenu-popup[panelopen] .panel-menuitem:nth-child(35) { animation-delay: 340ms; }
 #appMenu-popup[panelopen] .subviewbutton:nth-child(36),
-#PanelUI-popup[panelopen] .subviewbutton:nth-child(36),
-#appMenu-popup[panelopen] .panel-menuitem:nth-child(36),
-#PanelUI-popup[panelopen] .panel-menuitem:nth-child(36) { animation-delay: 350ms; }
+#appMenu-popup[panelopen] .panel-menuitem:nth-child(36) { animation-delay: 350ms; }
 #appMenu-popup[panelopen] .subviewbutton:nth-child(37),
-#PanelUI-popup[panelopen] .subviewbutton:nth-child(37),
-#appMenu-popup[panelopen] .panel-menuitem:nth-child(37),
-#PanelUI-popup[panelopen] .panel-menuitem:nth-child(37) { animation-delay: 360ms; }
+#appMenu-popup[panelopen] .panel-menuitem:nth-child(37) { animation-delay: 360ms; }
 #appMenu-popup[panelopen] .subviewbutton:nth-child(38),
-#PanelUI-popup[panelopen] .subviewbutton:nth-child(38),
-#appMenu-popup[panelopen] .panel-menuitem:nth-child(38),
-#PanelUI-popup[panelopen] .panel-menuitem:nth-child(38) { animation-delay: 370ms; }
+#appMenu-popup[panelopen] .panel-menuitem:nth-child(38) { animation-delay: 370ms; }
 #appMenu-popup[panelopen] .subviewbutton:nth-child(39),
-#PanelUI-popup[panelopen] .subviewbutton:nth-child(39),
-#appMenu-popup[panelopen] .panel-menuitem:nth-child(39),
-#PanelUI-popup[panelopen] .panel-menuitem:nth-child(39) { animation-delay: 380ms; }
+#appMenu-popup[panelopen] .panel-menuitem:nth-child(39) { animation-delay: 380ms; }
 #appMenu-popup[panelopen] .subviewbutton:nth-child(40),
-#PanelUI-popup[panelopen] .subviewbutton:nth-child(40),
-#appMenu-popup[panelopen] .panel-menuitem:nth-child(40),
-#PanelUI-popup[panelopen] .panel-menuitem:nth-child(40) { animation-delay: 390ms; }
+#appMenu-popup[panelopen] .panel-menuitem:nth-child(40) { animation-delay: 390ms; }
 #appMenu-popup[panelopen] .subviewbutton:nth-child(41),
-#PanelUI-popup[panelopen] .subviewbutton:nth-child(41),
-#appMenu-popup[panelopen] .panel-menuitem:nth-child(41),
-#PanelUI-popup[panelopen] .panel-menuitem:nth-child(41) { animation-delay: 400ms; }
+#appMenu-popup[panelopen] .panel-menuitem:nth-child(41) { animation-delay: 400ms; }
 #appMenu-popup[panelopen] .subviewbutton:nth-child(42),
-#PanelUI-popup[panelopen] .subviewbutton:nth-child(42),
-#appMenu-popup[panelopen] .panel-menuitem:nth-child(42),
-#PanelUI-popup[panelopen] .panel-menuitem:nth-child(42) { animation-delay: 410ms; }
+#appMenu-popup[panelopen] .panel-menuitem:nth-child(42) { animation-delay: 410ms; }
 #appMenu-popup[panelopen] .subviewbutton:nth-child(43),
-#PanelUI-popup[panelopen] .subviewbutton:nth-child(43),
-#appMenu-popup[panelopen] .panel-menuitem:nth-child(43),
-#PanelUI-popup[panelopen] .panel-menuitem:nth-child(43) { animation-delay: 420ms; }
+#appMenu-popup[panelopen] .panel-menuitem:nth-child(43) { animation-delay: 420ms; }
 #appMenu-popup[panelopen] .subviewbutton:nth-child(44),
-#PanelUI-popup[panelopen] .subviewbutton:nth-child(44),
-#appMenu-popup[panelopen] .panel-menuitem:nth-child(44),
-#PanelUI-popup[panelopen] .panel-menuitem:nth-child(44) { animation-delay: 430ms; }
+#appMenu-popup[panelopen] .panel-menuitem:nth-child(44) { animation-delay: 430ms; }
 #appMenu-popup[panelopen] .subviewbutton:nth-child(45),
-#PanelUI-popup[panelopen] .subviewbutton:nth-child(45),
-#appMenu-popup[panelopen] .panel-menuitem:nth-child(45),
-#PanelUI-popup[panelopen] .panel-menuitem:nth-child(45) { animation-delay: 440ms; }
+#appMenu-popup[panelopen] .panel-menuitem:nth-child(45) { animation-delay: 440ms; }
 #appMenu-popup[panelopen] .subviewbutton:nth-child(46),
-#PanelUI-popup[panelopen] .subviewbutton:nth-child(46),
-#appMenu-popup[panelopen] .panel-menuitem:nth-child(46),
-#PanelUI-popup[panelopen] .panel-menuitem:nth-child(46) { animation-delay: 450ms; }
+#appMenu-popup[panelopen] .panel-menuitem:nth-child(46) { animation-delay: 450ms; }
 #appMenu-popup[panelopen] .subviewbutton:nth-child(47),
-#PanelUI-popup[panelopen] .subviewbutton:nth-child(47),
-#appMenu-popup[panelopen] .panel-menuitem:nth-child(47),
-#PanelUI-popup[panelopen] .panel-menuitem:nth-child(47) { animation-delay: 460ms; }
+#appMenu-popup[panelopen] .panel-menuitem:nth-child(47) { animation-delay: 460ms; }
 #appMenu-popup[panelopen] .subviewbutton:nth-child(48),
-#PanelUI-popup[panelopen] .subviewbutton:nth-child(48),
-#appMenu-popup[panelopen] .panel-menuitem:nth-child(48),
-#PanelUI-popup[panelopen] .panel-menuitem:nth-child(48) { animation-delay: 470ms; }
+#appMenu-popup[panelopen] .panel-menuitem:nth-child(48) { animation-delay: 470ms; }
 
 @keyframes menuitem-reveal-down {
   0% {
