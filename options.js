@@ -51,6 +51,14 @@ function renderSettings(settings) {
       input.value = getSettingValue(setting.property, setting.defaultValue);
       if (setting.placeholder) input.placeholder = setting.placeholder;
       input.addEventListener('input', () => setSettingValue(setting.property, input.value));
+    } else if (setting.type === 'number') {
+      input = document.createElement('input');
+      input.type = 'number';
+      input.id = setting.property;
+      input.value = getSettingValue(setting.property, setting.defaultValue);
+      if (setting.min !== undefined) input.min = setting.min;
+      if (setting.max !== undefined) input.max = setting.max;
+      input.addEventListener('input', () => setSettingValue(setting.property, input.value));
     } else if (setting.type === 'select') {
       input = document.createElement('select');
       input.id = setting.property;

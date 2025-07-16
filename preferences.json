@@ -8,6 +8,15 @@
     "showIf": "zen-menu-reveal-custom-icon.enable-custom-icon"
   },
   {
+    "property": "zen-menu-reveal-custom-icon.icon-size",
+    "label": "Custom icon size (px, default 16, range 12-20)",
+    "type": "number",
+    "defaultValue": 16,
+    "min": 12,
+    "max": 20,
+    "showIf": "zen-menu-reveal-custom-icon.enable-custom-icon"
+  },
+  {
     "property": "zen-menu-reveal-custom-icon.enable-animation",
     "label": "Enable staggered menu reveal animation",
     "type": "checkbox",
