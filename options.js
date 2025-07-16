@@ -4,7 +4,9 @@ async function loadPreferences() {
 }
 
 function getSettingValue(property, defaultValue) {
-  return localStorage.getItem(property) ?? defaultValue;
+  const val = localStorage.getItem(property);
+  if (val === null || val === undefined) return defaultValue;
+  return val;
 }
 
 function setSettingValue(property, value) {
@@ -17,6 +19,16 @@ function isValidSvgUrl(url) {
   return url.endsWith('.svg') || url.startsWith('data:image/svg+xml');
 }
 
+function isShowIfEnabled(setting, currentValues, settings) {
+  if (!setting.showIf) return true;
+  const dep = setting.showIf;
+  // Find the dependency's default value
+  const depSetting = settings.find(s => s.property === dep);
+  const depDefault = depSetting ? depSetting.defaultValue : false;
+  const val = currentValues[dep];
+  return val === true || val === 'true' || (val === undefined && (depDefault === true || depDefault === 'true'));
+}
+
 function renderSettings(settings) {
   const form = document.getElementById('settings-form');
   form.innerHTML = '';
@@ -25,13 +37,15 @@ function renderSettings(settings) {
   settings.forEach(setting => {
     currentValues[setting.property] = getSettingValue(setting.property, setting.defaultValue);
   });
-  settings.forEach(setting => {
-    // Conditional display logic
-    if (setting.showIf) {
-      const dep = setting.showIf;
-      if (!(currentValues[dep] === true || currentValues[dep] === 'true')) {
-        return; // Skip rendering if dependency not met
-      }
+  // Render settings in order, but always render the custom icon toggle first
+  const sortedSettings = [
+    ...settings.filter(s => s.property === 'zen-menu-reveal-custom-icon.enable-custom-icon'),
+    ...settings.filter(s => s.property !== 'zen-menu-reveal-custom-icon.enable-custom-icon')
+  ];
+  sortedSettings.forEach(setting => {
+    // Improved conditional display logic
+    if (!isShowIfEnabled(setting, currentValues, settings)) {
+      return;
     }
     const div = document.createElement('div');
     div.className = 'setting';
