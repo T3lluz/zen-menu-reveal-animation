@@ -1,5 +1,11 @@
 [
   {
+    "property": "zen-menu-reveal-custom-icon.enable-custom-icon",
+    "label": "Enable custom settings cog menu icon",
+    "type": "checkbox",
+    "defaultValue": true
+  },
+  {
     "property": "zen-menu-reveal-custom-icon.custom-icon-url",
     "label": "🖼️ Image URL, format:   url('https://example.com/youricon.svg')",
     "type": "string",
@@ -19,12 +25,6 @@
   {
     "property": "zen-menu-reveal-custom-icon.enable-animation",
     "label": "Enable staggered menu reveal animation",
-    "type": "checkbox",
-    "defaultValue": true
-  },
-  {
-    "property": "zen-menu-reveal-custom-icon.enable-custom-icon",
-    "label": "Enable custom settings cog menu icon",
     "type": "checkbox",
     "defaultValue": true
   },
