@@ -1,13 +1,13 @@
 [
   {
-    "property": "zen-menu-reveal-custom-icon.enable-custom-icon",
-    "label": "🖼️ Enable custom settings cog menu icon",
+    "property": "zen-menu-reveal-custom-icon.enable-custom-cog",
+    "label": "Enable custom cog icon with 180° rotation on hover",
     "type": "checkbox",
     "defaultValue": true
   },
   {
     "property": "zen-menu-reveal-custom-icon.enable-animation",
-    "label": "✨ Enable staggered menu reveal animation",
+    "label": "Enable staggered menu reveal animation",
     "type": "checkbox",
     "defaultValue": true
   }
