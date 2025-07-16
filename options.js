@@ -11,6 +11,12 @@ function setSettingValue(property, value) {
   localStorage.setItem(property, value);
 }
 
+function isValidSvgUrl(url) {
+  if (!url) return false;
+  url = url.trim();
+  return url.endsWith('.svg') || url.startsWith('data:image/svg+xml');
+}
+
 function renderSettings(settings) {
   const form = document.getElementById('settings-form');
   form.innerHTML = '';
@@ -34,6 +40,7 @@ function renderSettings(settings) {
     label.htmlFor = setting.property;
     div.appendChild(label);
     let input;
+    let warning;
     if (setting.type === 'checkbox') {
       input = document.createElement('input');
       input.type = 'checkbox';
@@ -50,7 +57,27 @@ function renderSettings(settings) {
       input.id = setting.property;
       input.value = getSettingValue(setting.property, setting.defaultValue);
       if (setting.placeholder) input.placeholder = setting.placeholder;
-      input.addEventListener('input', () => setSettingValue(setting.property, input.value));
+      // SVG validation for custom icon URL
+      if (setting.property === 'zen-menu-reveal-custom-icon.custom-icon-url') {
+        warning = document.createElement('div');
+        warning.style.color = 'orange';
+        warning.style.fontSize = '0.95em';
+        warning.style.marginTop = '0.2em';
+        const validate = () => {
+          if (input.value && !isValidSvgUrl(input.value)) {
+            warning.textContent = 'Only SVG URLs or data:image/svg+xml are allowed.';
+          } else {
+            warning.textContent = '';
+          }
+        };
+        input.addEventListener('input', () => {
+          setSettingValue(setting.property, input.value);
+          validate();
+        });
+        validate();
+      } else {
+        input.addEventListener('input', () => setSettingValue(setting.property, input.value));
+      }
     } else if (setting.type === 'number') {
       input = document.createElement('input');
       input.type = 'number';
@@ -72,6 +99,7 @@ function renderSettings(settings) {
       input.addEventListener('change', () => setSettingValue(setting.property, input.value));
     }
     div.appendChild(input);
+    if (warning) div.appendChild(warning);
     form.appendChild(div);
   });
 }
