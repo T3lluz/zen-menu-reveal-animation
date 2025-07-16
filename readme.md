@@ -9,8 +9,11 @@ This mod adds:
 
 - Enable/disable the menu animation
 - Enable/disable the custom menu icon
+- Change the custom icon image URL (SVG, PNG, etc.)
+- Adjust the icon size
+- Choose the hover animation
 
-You can toggle these features in the mod's settings after importing into Sine.
+**All settings must be changed via the Sine mod settings menu.**
 
 ## Custom Icon/Image URL in Sine
 
