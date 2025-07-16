@@ -229,15 +229,17 @@
 /* --- Custom Menu Icon (toggleable) --- */
 @media (-moz-bool-pref: "zen-menu-reveal-custom-icon.enable-custom-icon") {
   toolbarbutton#PanelUI-menu-button {
-    list-style-image: url("__ZENCUSTOMICONURL__");
+    /* Sine will replace __ZENCUSTOMICONURL__ with the user setting */
+    list-style-image: var(--zen-custom-icon-url, url("__ZENCUSTOMICONURL__"));
   }
   toolbarbutton#PanelUI-menu-button .toolbarbutton-icon {
-    width: -moz-pref("zen-menu-reveal-custom-icon.icon-size", 16)px !important;
-    height: -moz-pref("zen-menu-reveal-custom-icon.icon-size", 16)px !important;
-    min-width: -moz-pref("zen-menu-reveal-custom-icon.icon-size", 16)px !important;
-    min-height: -moz-pref("zen-menu-reveal-custom-icon.icon-size", 16)px !important;
-    max-width: -moz-pref("zen-menu-reveal-custom-icon.icon-size", 16)px !important;
-    max-height: -moz-pref("zen-menu-reveal-custom-icon.icon-size", 16)px !important;
+    /* Sine will replace this with the user setting, fallback to 16px */
+    width: var(--zen-custom-icon-size, 16px) !important;
+    height: var(--zen-custom-icon-size, 16px) !important;
+    min-width: var(--zen-custom-icon-size, 16px) !important;
+    min-height: var(--zen-custom-icon-size, 16px) !important;
+    max-width: var(--zen-custom-icon-size, 16px) !important;
+    max-height: var(--zen-custom-icon-size, 16px) !important;
     scale: 1 !important;
   }
   /* Animation on hover based on preference */
@@ -267,7 +269,8 @@
     }
   }
   @keyframes rotate180-once {
-    to { transform: rotate(180deg); }
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(180deg); }
   }
   @keyframes bounce-once {
     0% { transform: translateY(0); }

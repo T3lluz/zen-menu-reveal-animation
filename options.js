@@ -140,8 +140,39 @@ function getCustomIconUrl() {
   return val;
 }
 
+function updateCustomIconCssVars() {
+  // Set CSS variables for live preview (for options.html or Sine live preview)
+  const url = getSettingValue('zen-menu-reveal-custom-icon.custom-icon-url', '');
+  const size = getSettingValue('zen-menu-reveal-custom-icon.icon-size', '16px');
+  if (url && url.startsWith('url(')) {
+    document.documentElement.style.setProperty('--zen-custom-icon-url', url);
+  } else {
+    document.documentElement.style.removeProperty('--zen-custom-icon-url');
+  }
+  if (size && /^\d+(px)?$/.test(size)) {
+    document.documentElement.style.setProperty('--zen-custom-icon-size', size.replace(/[^\d]/g, '') + 'px');
+  } else {
+    document.documentElement.style.removeProperty('--zen-custom-icon-size');
+  }
+}
+
+// Patch input listeners to update CSS vars
+function patchLiveCssVars(settings) {
+  settings.forEach(setting => {
+    const input = document.getElementById(setting.property);
+    if (!input) return;
+    if (setting.property === 'zen-menu-reveal-custom-icon.custom-icon-url' || setting.property === 'zen-menu-reveal-custom-icon.icon-size') {
+      input.addEventListener('input', updateCustomIconCssVars);
+    }
+  });
+}
+
 document.getElementById('save-btn').addEventListener('click', () => {
   alert('Settings saved! (Reload extension to apply)');
 });
 
-loadPreferences().then(renderSettings); 
+loadPreferences().then(settings => {
+  renderSettings(settings);
+  patchLiveCssVars(settings);
+  updateCustomIconCssVars();
+}); 
