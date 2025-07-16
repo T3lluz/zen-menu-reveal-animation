@@ -93,13 +93,26 @@ function renderSettings(settings) {
       if (setting.min !== undefined) input.min = setting.min;
       if (setting.max !== undefined) input.max = setting.max;
       input.addEventListener('input', () => setSettingValue(setting.property, input.value));
-    } else if (setting.type === 'select') {
+    } else if (setting.type === 'dropdown') {
       input = document.createElement('select');
       input.id = setting.property;
-      setting.options.forEach(opt => {
+      if (setting.placeholder) {
+        const placeholderOption = document.createElement('option');
+        placeholderOption.value = '';
+        placeholderOption.textContent = setting.placeholder;
+        placeholderOption.disabled = true;
+        placeholderOption.selected = getSettingValue(setting.property, setting.defaultValue) === '';
+        input.appendChild(placeholderOption);
+      }
+      (setting.options || []).forEach(opt => {
         const option = document.createElement('option');
-        option.value = opt;
-        option.textContent = opt;
+        if (typeof opt === 'object') {
+          option.value = opt.value;
+          option.textContent = opt.label;
+        } else {
+          option.value = opt;
+          option.textContent = opt;
+        }
         input.appendChild(option);
       });
       input.value = getSettingValue(setting.property, setting.defaultValue);
@@ -109,6 +122,22 @@ function renderSettings(settings) {
     if (warning) div.appendChild(warning);
     form.appendChild(div);
   });
+}
+
+function getIconSizePx() {
+  let val = getSettingValue('zen-menu-reveal-custom-icon.icon-size', '16px');
+  if (typeof val === 'string' && val.endsWith('px')) {
+    val = val.replace('px', '');
+  }
+  const px = parseInt(val, 10);
+  if (isNaN(px) || px < 12 || px > 20) return 16;
+  return px;
+}
+
+function getCustomIconUrl() {
+  let val = getSettingValue('zen-menu-reveal-custom-icon.custom-icon-url', '');
+  if (!val) return '';
+  return val;
 }
 
 document.getElementById('save-btn').addEventListener('click', () => {

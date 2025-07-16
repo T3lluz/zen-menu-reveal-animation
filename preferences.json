@@ -1,7 +1,7 @@
 [
   {
     "property": "zen-menu-reveal-custom-icon.enable-custom-icon",
-    "label": "Enable custom settings cog menu icon",
+    "label": "🖼️ Enable custom settings cog menu icon",
     "type": "checkbox",
     "defaultValue": true
   },
@@ -15,24 +15,30 @@
   },
   {
     "property": "zen-menu-reveal-custom-icon.icon-size",
-    "label": "Custom icon size (px, default 16, range 12-20)",
-    "type": "number",
-    "defaultValue": 16,
-    "min": 12,
-    "max": 20,
+    "label": "🖼️ Custom icon size (px, default 16, range 12-20)",
+    "type": "string",
+    "defaultValue": "16px",
+    "placeholder": "16px (12-20px)",
     "showIf": "zen-menu-reveal-custom-icon.enable-custom-icon"
   },
   {
     "property": "zen-menu-reveal-custom-icon.enable-animation",
-    "label": "Enable staggered menu reveal animation",
+    "label": "✨ Enable staggered menu reveal animation",
     "type": "checkbox",
     "defaultValue": true
   },
   {
     "property": "zen-menu-reveal-custom-icon.hover-animation-type",
-    "label": "Settings icon hover animation type (rotate180, bounce, pulse, wiggle, none)",
-    "type": "select",
-    "options": ["rotate180", "bounce", "pulse", "wiggle", "none"],
-    "defaultValue": "rotate180"
+    "label": "✨ Settings icon hover animation type",
+    "type": "dropdown",
+    "placeholder": "Select an animation",
+    "defaultValue": "rotate180",
+    "options": [
+      { "label": "Rotate 180°", "value": "rotate180" },
+      { "label": "Bounce", "value": "bounce" },
+      { "label": "Pulse", "value": "pulse" },
+      { "label": "Wiggle", "value": "wiggle" },
+      { "label": "None", "value": "none" }
+    ]
   }
 ] 
