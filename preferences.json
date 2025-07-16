@@ -2,7 +2,7 @@
   {
     "property": "zen-menu-reveal-custom-icon.custom-icon-url",
     "label": "Custom icon/image URL (SVG, PNG, etc.)",
-    "type": "text",
+    "type": "string",
     "defaultValue": ""
   },
   {
