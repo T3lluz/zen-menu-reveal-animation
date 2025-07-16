@@ -7,7 +7,7 @@
   },
   {
     "property": "zen-menu-reveal-custom-icon.custom-icon-url",
-    "label": "🖼️ Image URL, format:   url('https://example.com/youricon.svg')",
+    "label": "🖼️ Image URL (must be: url('https://example.com/youricon.svg'))",
     "type": "string",
     "defaultValue": "url('https://github.com/sameerasw/my-internet/blob/main/wave-light.png?raw=true')",
     "placeholder": "url('https://example.com/youricon.svg')",
@@ -16,9 +16,11 @@
   {
     "property": "zen-menu-reveal-custom-icon.icon-size",
     "label": "🖼️ Custom icon size (px, default 16, range 12-20)",
-    "type": "string",
-    "defaultValue": "16px",
-    "placeholder": "16px (12-20px)",
+    "type": "number",
+    "defaultValue": 16,
+    "min": 12,
+    "max": 20,
+    "placeholder": "16 (12-20)",
     "showIf": "zen-menu-reveal-custom-icon.enable-custom-icon"
   },
   {
