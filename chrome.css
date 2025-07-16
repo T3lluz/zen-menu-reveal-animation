@@ -228,8 +228,14 @@
 
 /* --- Custom Menu Icon (toggleable) --- */
 @media (-moz-bool-pref: "zen-menu-reveal-custom-icon.enable-custom-icon") {
+  /* Use custom icon URL if set, otherwise fallback to default SVG */
   toolbarbutton#PanelUI-menu-button {
     list-style-image: url('data:image/svg+xml;utf8,<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.09A1.65 1.65 0 0 0 11 3.09V3a2 2 0 1 1 4 0v.09c.38.14.73.36 1 .66.27.3.49.65.66 1.05h.09a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.09c.14.38.36.73.66 1 .3.27.65.49 1.05.66v.09a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>') !important;
+  }
+  @media (-moz-bool-pref: "zen-menu-reveal-custom-icon.custom-icon-url") {
+    toolbarbutton#PanelUI-menu-button {
+      list-style-image: url("chrome://userchrome/content/custom-icon.png") !important;
+    }
   }
   toolbarbutton#PanelUI-menu-button .toolbarbutton-icon {
     width: 16px !important;
@@ -240,11 +246,39 @@
     max-height: 16px !important;
     scale: 1 !important;
   }
+  /* Animation on hover based on preference */
   html[zen-single-toolbar="true"] #PanelUI-menu-button:hover .toolbarbutton-icon {
     animation: spin-once 1s cubic-bezier(0.35, 0.15, 0.12, 1) forwards;
   }
+  @media (-moz-bool-pref: "zen-menu-reveal-custom-icon.hover-animation-type=bounce") {
+    html[zen-single-toolbar="true"] #PanelUI-menu-button:hover .toolbarbutton-icon {
+      animation: bounce-once 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+    }
+  }
+  @media (-moz-bool-pref: "zen-menu-reveal-custom-icon.hover-animation-type=pulse") {
+    html[zen-single-toolbar="true"] #PanelUI-menu-button:hover .toolbarbutton-icon {
+      animation: pulse-once 0.7s cubic-bezier(0.4, 0, 0.6, 1) forwards;
+    }
+  }
+  @media (-moz-bool-pref: "zen-menu-reveal-custom-icon.hover-animation-type=none") {
+    html[zen-single-toolbar="true"] #PanelUI-menu-button:hover .toolbarbutton-icon {
+      animation: none !important;
+    }
+  }
   @keyframes spin-once {
     to { transform: rotate(180deg); }
+  }
+  @keyframes bounce-once {
+    0% { transform: translateY(0); }
+    30% { transform: translateY(-10px); }
+    50% { transform: translateY(0); }
+    70% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+  }
+  @keyframes pulse-once {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
   }
 }
 

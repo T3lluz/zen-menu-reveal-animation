@@ -10,5 +10,18 @@
     "label": "Enable custom settings cog menu icon",
     "type": "checkbox",
     "defaultValue": true
+  },
+  {
+    "property": "zen-menu-reveal-custom-icon.custom-icon-url",
+    "label": "Custom icon/image URL (SVG, PNG, etc.)",
+    "type": "text",
+    "defaultValue": ""
+  },
+  {
+    "property": "zen-menu-reveal-custom-icon.hover-animation-type",
+    "label": "Settings icon hover animation type (spin, bounce, pulse, none)",
+    "type": "select",
+    "options": ["spin", "bounce", "pulse", "none"],
+    "defaultValue": "spin"
   }
 ] 
