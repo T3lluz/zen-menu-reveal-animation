@@ -3,7 +3,12 @@
     "name": "Menu Reveal Animation Zen",
     "description": "Adds a smooth, staggered reveal animation to the Firefox (Zen browser) main menu. Pure CSS, no settings.",
     "homepage": "https://github.com/T3lluz/menu-reveal-animation-zen",
+    "style": "https://raw.githubusercontent.com/T3lluz/menu-reveal-animation-zen/main/chrome.css",
+    "readme": "https://raw.githubusercontent.com/T3lluz/menu-reveal-animation-zen/main/readme.md",
+    "image": "https://raw.githubusercontent.com/T3lluz/menu-reveal-animation-zen/main/image.png",
     "author": "T3lluz",
     "version": "1.0.0",
-    "readme": "https://raw.githubusercontent.com/T3lluz/menu-reveal-animation-zen/main/readme.md"
+    "tags": [],
+    "createdAt": "2024-06-14",
+    "updatedAt": "2024-06-14"
 } 
