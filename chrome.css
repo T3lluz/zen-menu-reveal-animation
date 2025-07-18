@@ -1,3 +1,11 @@
+/*
+ * Menu reveal animation speed can be adjusted by changing the value of --menu-reveal-duration below.
+ * Example: 0.15s (default), 0.3s (slower), 0.08s (faster)
+ */
+:root {
+  --menu-reveal-duration: 0.15s;
+}
+
 #appMenu-popup:not([panelopen]) .subviewbutton,
 #PanelUI-popup:not([panelopen]) .subviewbutton,
 #appMenu-popup:not([panelopen]) .panel-menuitem,
@@ -9,7 +17,7 @@
 #PanelUI-popup[panelopen] .subviewbutton,
 #appMenu-popup[panelopen] .panel-menuitem,
 #PanelUI-popup[panelopen] .panel-menuitem {
-  animation: menuitem-reveal-down 0.15s both;
+  animation: menuitem-reveal-down var(--menu-reveal-duration) both;
   pointer-events: auto;
 }
 /* Staggered delays for 48 items, 10ms per item */
