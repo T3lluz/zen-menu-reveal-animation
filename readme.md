@@ -1,24 +1,22 @@
-# Zen Menu Reveal Animation for Firefox
+# Menu Reveal Animation for Firefox (Zen browser)
 
-This mod provides a clean, elegant, and professional staggered menu item reveal animation for the Firefox main menu (up to 48 items, fast and smooth). It is a pure CSS solution—no settings, no scripts, just drop-in style enhancement for a modern look and feel.
+A lightweight CSS mod that adds a smooth, staggered reveal animation to the Firefox (Zen browser) main menu. No settings, no scripts—just a modern look for your menu.
 
 ## Features
 
-- Smooth, staggered reveal animation for menu items
-- Lightweight and fast (CSS only)
-- No dependencies or configuration required
+- Staggered reveal animation for menu items
+- Pure CSS, no dependencies
 
 ## Installation
 
-1. Download or copy the `chrome.css` file from this repository.
-2. Place it in your Firefox profile's `chrome` folder (create the folder if it doesn't exist).
-3. Make sure userChrome.css is enabled in Firefox (see Mozilla documentation for details).
-4. Restart Firefox to see the new menu animation in action.
+1. Copy `chrome.css` to your Firefox profile's `chrome` folder.
+2. Enable userChrome.css in Firefox.
+3. Restart Firefox to see the animation.
 
 ---
 
 **Repository:**
-https://github.com/T3lluz/zen-menu-reveal-custom-icon
+https://github.com/T3lluz/menu-reveal-animation-zen
 
 ---
 

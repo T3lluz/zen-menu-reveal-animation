@@ -1,7 +1,7 @@
 /*
-  Zen Menu Reveal Animation for Firefox
-  -------------------------------------
-  This mod provides a clean, elegant, and professional staggered menu item reveal animation for the Firefox main menu (up to 48 items, fast and smooth). Pure CSS, no dependencies, no configuration required. Just drop it into your userChrome.css for a modern look and feel.
+  Menu Reveal Animation for Firefox (Zen browser)
+  ----------------------------------------------
+  A lightweight CSS mod that adds a smooth, staggered reveal animation to the Firefox (Zen browser) main menu. No settings, no scripts—just a modern look for your menu.
 */
 /* Menu reveal animation speed is set in this file. */
 :root {
