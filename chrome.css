@@ -1,9 +1,9 @@
 /*
- * Menu reveal animation speed can be adjusted by changing the value of --menu-reveal-duration below.
- * Example: 0.15s (default), 0.3s (slower), 0.08s (faster)
+ * Menu reveal animation speed is controlled by the settings menu.
+ * The value of --menu-reveal-duration will be set automatically based on your chosen speed (in ms).
  */
 :root {
-  --menu-reveal-duration: 0.15s;
+  --menu-reveal-duration: 0.15s; /* This value will be replaced by the settings system */
 }
 
 #appMenu-popup:not([panelopen]) .subviewbutton,
