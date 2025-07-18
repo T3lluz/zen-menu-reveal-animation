@@ -7,7 +7,7 @@ A lightweight CSS mod that adds a smooth reveal animation to the Firefox (Zen br
 - Staggered reveal animation for menu items
 - Pure CSS, no dependencies
 
-## Installation through Sine mode menu:
+## Installation through Sine mod-menu:
 
 1. Install Sine from: https://github.com/CosmoCreeper/Sine
 2. Copy the repository link for this github: https://github.com/T3lluz/zen-menu-reveal-animation
