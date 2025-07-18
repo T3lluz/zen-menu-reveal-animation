@@ -1,8 +1,9 @@
 [
     {
+        "name": "Menu Reveal Animation Zen",
         "property": "menu-reveal-animation-zen.description",
-        "label": "Adds a smoothreveal animation to the Firefox (Zen browser) main menu. Pure CSS.",
-        "defaultValue": "",
-        "type": "description"
+        "label": "Adds a smooth, staggered reveal animation to the Firefox (Zen browser) main menu. Pure CSS, no settings.",
+        "type": "description",
+        "defaultValue": ""
     }
 ]
