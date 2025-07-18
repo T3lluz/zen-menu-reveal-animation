@@ -1,11 +1,1 @@
-[
-  {
-    "property": "zen-menu-reveal-custom.speed",
-    "label": "Menu reveal animation speed (ms)",
-    "type": "number",
-    "defaultValue": 150,
-    "min": 50,
-    "max": 1000,
-    "step": 10
-  }
-] 
+[] 

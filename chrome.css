@@ -1,15 +1,12 @@
-/*
- * Menu reveal animation speed is controlled by the settings menu.
- * The value of --menu-reveal-duration will be set automatically based on your chosen speed (in ms).
- */
+/* Menu reveal animation speed is set in this file. */
 :root {
-  --menu-reveal-duration: 0.15s; /* This value will be replaced by the settings system */
+  --menu-reveal-duration: 0.15s;
 }
 
 #appMenu-popup:not([panelopen]) .subviewbutton,
 #PanelUI-popup:not([panelopen]) .subviewbutton,
 #appMenu-popup:not([panelopen]) .panel-menuitem,
-#PanelUI-popup:not([panelopen]) .panel-menuitem {
+#PanelUI-popup[panelopen] .panel-menuitem {
   opacity: 0;
   pointer-events: none;
 }
